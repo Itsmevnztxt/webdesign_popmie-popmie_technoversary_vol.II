@@ -1,0 +1,28 @@
+# Daftar Kebutuhan Aset Ilustrasi (Asset Manifest) - RimbaKecil
+
+Gunakan daftar ini untuk mengganti ilustrasi SVG sementara dengan aset gambar final bergaya *gouache* & *paper-cutout* buku cerita anak (palet `#FAF8F0`, `#477A59`, `#A8C99A`, `#C8DEA4`, `#DCEEDB`, `#D9EDE9`, `#F5D77D`, `#E9A58E`, garis tepi `#293A30`).
+
+| Asset ID & Filename | Kategori | Dimensi / Rasio & Format | Deskripsi Visual & Pose / State |
+| :--- | :--- | :--- | :--- |
+| `mascot-biji-sleeping.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Karakter biji ek (*acorn*) kecil dengan topi cokelat hangat `#5C4636`, tubuh coral lembut `#E9A58E`, tas selempang kelopak hijau `#C8DEA4`. Mata terpejam damai, kedua daun di puncak kepala terkulai santai ke samping, simbol `Zzz` tipis di kanan atas. |
+| `mascot-biji-happy.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose menyapa ceria: mata bulat berbinar, senyum ramah, kedua daun kepala tegak miring ke atas dengan sudut bersemangat. |
+| `mascot-biji-worried.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose saat misi zona belum selesai: alis sedikit berkerut, mulut melengkung sedih kecil, kedua daun kepala terkulai ke bawah menandakan ada masalah alam. |
+| `mascot-biji-hint.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose berpikir/memberi petunjuk: kepala miring ringan, salah satu daun kepala melengkung menyerupai tanda tanya `?`. |
+| `mascot-biji-celebrate.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose setelah sandbox terbuka: kedua daun kepala mekar tegak dan menumbuhkan dua kuncup bunga kecil `#F5D77D` dan `#E9A58E` di pangkal daun. |
+| `hero-valley-hills.png` | Environment Layer | `2400x960px` (5:2), PNG transparan / SVG | Lanskap bukit berlapis tanpa kotak: bukit belakang `#A8C99A`, bukit tengah `#C8DEA4`, bukit depan `#477A59` bertekstur sapuan kuas *gouache* lembut, dilengkapi satu pohon besar rindang di sisi kanan-tengah sebagai tempat Biji berteduh. |
+| `zone1-meadow-bg.png` | Environment Layer | `1600x820px` (~2:1), PNG transparan / SVG | Latar padang rumput berlapis untuk Zona 1 dengan kontur bukit pastel `#A8C99A` -> `#C8DEA4` -> `#477A59` dan siluet rumput tipis di tepi bawah. |
+| `prop-storm-cloud.svg` | Interactive Prop | `320x200px` (16:10), SVG transparan | Awan kelabu tebal bergaya potongan kertas (*paper-cutout*) dengan dua garis gerimis tipis, garis tepi `#293A30` halus. (Dibuat 2 variasi ringan agar tidak identik). |
+| `prop-sunflower-states.svg` | Interactive Prop | `320x440px`, SVG transparan (multi-layer) | Batang dan kepala bunga matahari besar `#F5D77D` dengan bagian tengah `#5C4636`. Memerlukan state layu/menunduk, setengah mekar, dan mekar cerah penuh untuk animasi rotasi heliotropisme. |
+| `prop-pollinator-bee.svg` | Interactive Prop | `140x120px`, SVG transparan | Lebah kecil gemuk berwarna `#F5D77D` dan garis `#293A30`, sayap pastel transparan `#D9EDE9`, ekspresi ramah. |
+| `prop-butterfly-set.svg` | Interactive Prop | `120x100px` per kupu-kupu (3 varian), SVG transparan | Tiga kupu-kupu kecil dengan sayap kombinasi `#F5D77D`, `#E9A58E`, `#D9EDE9`, dan `#C8DEA4`. |
+| `zone2-river-basin.png` | Environment Layer | `1600x640px` (5:2), PNG transparan / SVG | Bantaran sungai berumput `#C8DEA4` dengan alur sungai berkelok menuju kolam teratai di sisi kanan, batu pijakan abu-sage, dan rumpun alang-alang di tepi kiri. Warna badan air dipisah agar bisa bertransisi dari keruh ke `#D9EDE9`. |
+| `prop-waste-items.svg` | Interactive Prop | `128x128px` per item (4 item), SVG transparan | Empat ikon benda bergaya ilustrasi buku cerita: (1) Botol plastik bening `#D9EDE9`, (2) Kaleng minuman `#E9A58E`, (3) Ranting patah `#5C4636`, (4) Daun gugur kering `#E9A58E`. |
+| `prop-sorting-stations.svg` | Interactive Prop | `240x200px` per wadah (2 item), SVG transparan | (1) Keranjang anyam daur ulang berwarna krem/biru langit, (2) Tumpukan kompos tanah subur dengan tunas daun kecil di puncaknya. |
+| `prop-frog-pond.svg` | Interactive Prop | `180x160px`, SVG transparan | Katak hijau ceria `#477A59` dengan mata besar ramah, siap ditempatkan di atas daun teratai `#A8C99A`. |
+| `zone3-underground-cross-section.png` | Environment Layer | `1600x820px` (~2:1), PNG / SVG | Penampang melintang tanah: lapisan rumput permukaan `#477A59`, lapisan humus `#5C4636`, tanah liat `#463529`, dan lapisan tanah dalam `#32261E` beserta kerikil kecil alami. |
+| `prop-soil-clumps.svg` | Interactive Prop | `160x120px` (3 variasi), SVG transparan | Gumpalan tanah keras kering berwarna cokelat muda retak yang menyelimuti biji oak sebelum diketuk anak. |
+| `prop-earthworm.svg` | Interactive Prop | `180x90px`, SVG transparan | Cacing tanah kecil ramah berwarna coral `#E9A58E` dengan ruas tubuh lembut dan mata titik kecil `#293A30`. |
+| `prop-oak-tree-xray.svg` | Interactive Prop | `600x700px`, SVG transparan (2 layer: normal & x-ray) | Pohon oak muda di permukaan plus jaringan akar bercabang ke bawah tanah. Layer X-ray menampilkan pembuluh bercahaya `#D9EDE9` dan gelembung nutrisi `#F5D77D` untuk ditampilkan di dalam lingkaran kaca pembesar. |
+| `sticker-badge-canopy.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker bunga matahari mekar dan lebah penyerbuk di sudut kanan atas. |
+| `sticker-badge-river.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker katak hijau tersenyum di atas daun teratai berair jernih `#D9EDE9`. |
+| `sticker-badge-underground.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker pohon oak rimbun lengkap dengan siluet akar bercabang di bawah garis tanah. |
