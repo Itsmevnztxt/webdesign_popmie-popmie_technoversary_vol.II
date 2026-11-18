@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useRimba } from '../state/rimbaStore';
 import { audioManager } from '../audio/audioManager';
 
-const CONTACT_STORAGE_KEY = 'rimbakecil_contact_messages_v1';
+const CONTACT_STORAGE_KEY = 'TamanPico_contact_messages_v1';
 
 interface ContactErrors {
   name?: string;
@@ -102,17 +102,17 @@ export function AboutContactPage() {
       aria-labelledby="about-title"
     >
       <div className="max-w-5xl mx-auto space-y-10">
-        {/* About RimbaKecil & Warm Family Story Profile */}
+        {/* About TamanPico & Warm Family Story Profile */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-7 field-note p-6 sm:p-8 space-y-4">
             <p className="text-sm font-extrabold uppercase tracking-wider text-[#477A59] m-0">
-              Kisah &amp; Tujuan RimbaKecil
+              Kisah &amp; Tujuan TamanPico
             </p>
             <h1 id="about-title" className="font-story text-3xl sm:text-5xl font-bold mt-1 mb-2">
-              Mengenal Misi RimbaKecil
+              Mengenal Misi TamanPico
             </h1>
             <p className="text-base sm:text-lg leading-relaxed m-0">
-              RimbaKecil dirancang untuk anak usia 7–10 tahun agar mereka belajar merawat lingkungan melalui eksperimen langsung dan cerita bergambar.
+              TamanPico dirancang untuk anak usia 7–10 tahun agar mereka belajar merawat lingkungan melalui eksperimen langsung dan cerita bergambar.
             </p>
             <p className="text-base leading-relaxed text-[#293A30]/90 m-0">
               Anak-anak berperan sebagai Lulu si Lebah, Kiko si Katak, dan Cici si Cacing untuk melihat hubungan nyata antara sinar matahari, air sungai yang bersih, serta tanah yang gembur. Semua kemajuan belajar disimpan langsung di perangkatmu supaya bisa dilanjutkan kapan saja.
@@ -139,12 +139,12 @@ export function AboutContactPage() {
               TENTANG KARYA INI
             </p>
             <h2 className="font-story text-2xl font-bold mt-0 mb-1">
-              RimbaKecil — Ruang Jelajah Alam Anak Indonesia
+              TamanPico — Ruang Jelajah Alam Anak Indonesia
             </h2>
             <dl className="space-y-3 text-sm sm:text-base m-0">
               <div>
                 <dt className="font-bold text-[#477A59]">Judul Karya</dt>
-                <dd className="m-0 font-semibold">RimbaKecil — Ruang Jelajah Alam Anak Indonesia</dd>
+                <dd className="m-0 font-semibold">TamanPico — Ruang Jelajah Alam Anak Indonesia</dd>
               </div>
               <div>
                 <dt className="font-bold text-[#477A59]">Kategori</dt>
@@ -304,7 +304,7 @@ export function AboutContactPage() {
 
               <div>
                 <label htmlFor="contact-message" className="block font-bold text-base mb-1.5">
-                  Pesanmu untuk RimbaKecil
+                  Pesanmu untuk TamanPico
                 </label>
                 <textarea
                   ref={messageRef}
@@ -343,7 +343,7 @@ export function AboutContactPage() {
                 type="submit"
                 className="touch-btn btn-forest px-6 py-3 text-base sm:text-lg"
               >
-                Kirim Pesan ke RimbaKecil →
+                Kirim Pesan ke TamanPico →
               </button>
             </form>
           </div>

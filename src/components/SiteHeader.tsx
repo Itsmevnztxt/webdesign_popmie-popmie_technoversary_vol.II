@@ -73,7 +73,7 @@ export function SiteHeader({ journalOpen, onOpenJournal }: SiteHeaderProps) {
               <path d="M18 15C24 9, 29 13, 25 18C23 20, 20 18, 18 15Z" fill="#477A59" stroke="#293A30" strokeWidth="1.8" />
             </svg>
           </span>
-          <span className="font-story font-bold text-xl sm:text-2xl text-[#293A30]">RimbaKecil</span>
+          <span className="font-story font-bold text-xl sm:text-2xl text-[#293A30]">TamanPico</span>
         </a>
 
         <nav ref={navRef} className="site-nav" aria-label="Navigasi Utama">

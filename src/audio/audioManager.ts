@@ -15,18 +15,18 @@ export const AUDIO_PATHS = {
   sfx: {
     wake: '/assets/audio/sfx-biji-wake.mp3',
     cloud: '/assets/audio/sfx-whoosh.mp3',
-    pollinate: '/assets/audio/sfx-pollinate.mp3',
-    'sort-ok': '/assets/audio/sfx-correct.mp3',
-    'sort-err': '/assets/audio/sfx-gentle-oops.mp3',
+    pollinate: '/assets/audio/sfx-water-drop.mp3',
+    'sort-ok': '/assets/audio/sfx-wood-tap.mp3',
+    'sort-err': '/assets/audio/sfx-whoosh.mp3',
     rain: '/assets/audio/sfx-rain.mp3',
-    soil: '/assets/audio/sfx-soil-dig.mp3',
+    soil: encodeURI('/assets/audio/Suara Remahan Tanah.mp3'),
     water: '/assets/audio/sfx-water-drop.mp3',
-    badge: '/assets/audio/sfx-badge-unlock.mp3',
+    badge: '/assets/audio/sfx-biji-wake.mp3',
     click: '/assets/audio/sfx-wood-tap.mp3'
   } satisfies Record<SfxName, string>
 } as const;
 
-const SOUND_STORAGE_KEY = 'rimbakecil_sound_enabled';
+const SOUND_STORAGE_KEY = 'tamanpico_sound_enabled';
 
 class RimbaAudioManager {
   private enabled = false;

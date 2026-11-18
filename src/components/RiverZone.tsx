@@ -298,7 +298,7 @@ export function RiverZone() {
               viewBox="0 0 800 420"
               className="w-full h-auto block select-none rounded-2xl overflow-hidden"
               role="img"
-              aria-label="Ilustrasi sungai hutan RimbaKecil yang bertransisi dari air keruh bersampah menjadi sungai jernih bersama ikan, teratai biru, dan Kiko si katak"
+              aria-label="Ilustrasi sungai hutan TamanPico yang bertransisi dari air keruh bersampah menjadi sungai jernih bersama ikan, teratai biru, dan Kiko si katak"
             >
               {/* Color fallback & state indicator beneath unified scene artwork */}
               <path

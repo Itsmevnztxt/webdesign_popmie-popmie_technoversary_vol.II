@@ -31,7 +31,7 @@ const ZONE_SCRIPTS: Record<ZoneId, { quest: string; hint: string; done: string }
   sanctuary: {
     quest: 'Ini Taman Hadiahmu! Selesaikan misi di Zona 1, 2, 3, dan 4 untuk menumbuhkan keempat hadiah alam.',
     hint: 'Ketuk tanaman atau satwa yang sudah tumbuh di taman untuk mendengar kabar gembira mereka.',
-    done: 'Seluruh Taman Hadiah mekar penuh! Kamu kini resmi menjadi Penjaga Utama RimbaKecil!'
+    done: 'Seluruh Taman Hadiah mekar penuh! Kamu kini resmi menjadi Penjaga Utama TamanPico!'
   }
 };
 

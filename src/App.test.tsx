@@ -11,12 +11,12 @@ beforeEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('RimbaKecil Multi-View Refactored Application', () => {
+describe('TamanPico Multi-View Refactored Application', () => {
   it('renders #home landing page with sleeping Biji, environmental stories, and navigates to #portal on Mulai Petualangan', async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: 'RimbaKecil' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'TamanPico' })).toBeInTheDocument();
     expect(screen.getByText('0/4 Penemuan')).toBeInTheDocument();
     expect(screen.getByText(/Tiga Sudut Alam yang Menunggu Tanganmu/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Lulu si Lebah Penyerbuk/i })).toBeInTheDocument();
@@ -516,7 +516,7 @@ describe('RimbaKecil Multi-View Refactored Application', () => {
     // Navigate to #tentang
     const primaryNav = screen.getByRole('navigation', { name: 'Navigasi Utama' });
     await user.click(within(primaryNav).getByRole('link', { name: 'Tentang & Kontak' }));
-    expect(screen.getByRole('heading', { name: /Mengenal Misi RimbaKecil/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Mengenal Misi TamanPico/i })).toBeInTheDocument();
 
     // Validate empty submit
     await user.click(document.getElementById('contact-submit-btn')!);
@@ -612,7 +612,7 @@ describe('RimbaKecil Multi-View Refactored Application', () => {
   });
 
   it('recovers from non-array contact storage and supports keyboard inspection in Taman Hadiah', async () => {
-    window.localStorage.setItem('rimbakecil_contact_messages_v1', '{"corrupted":true}');
+    window.localStorage.setItem('TamanPico_contact_messages_v1', '{"corrupted":true}');
     window.localStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({
@@ -634,7 +634,7 @@ describe('RimbaKecil Multi-View Refactored Application', () => {
     );
     await user.click(document.getElementById('contact-submit-btn')!);
     expect(document.getElementById('contact-success-banner')).toHaveTextContent(/Terima kasih, Pak Budi/i);
-    const storedMsgs = JSON.parse(window.localStorage.getItem('rimbakecil_contact_messages_v1')!);
+    const storedMsgs = JSON.parse(window.localStorage.getItem('TamanPico_contact_messages_v1')!);
     expect(Array.isArray(storedMsgs)).toBe(true);
     expect(storedMsgs[0].name).toBe('Pak Budi');
 
@@ -843,7 +843,7 @@ describe('RimbaKecil Multi-View Refactored Application', () => {
     expect(within(controls).getByRole('button', { name: 'Otomatis' })).toHaveAttribute('aria-pressed', 'true');
   });
 
-  it('completes Zona 4 (Mangrove) quest, operates tidal wave sandbox, and unlocks Sertifikat Penjaga RimbaKecil at 4/4', async () => {
+  it('completes Zona 4 (Mangrove) quest, operates tidal wave sandbox, and unlocks Sertifikat Penjaga TamanPico at 4/4', async () => {
     window.localStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({
@@ -884,7 +884,7 @@ describe('RimbaKecil Multi-View Refactored Application', () => {
     await user.click(document.getElementById('stage-btn-sanctuary')!);
     const cert = document.getElementById('rimba-certificate-card')!;
     expect(cert).toBeInTheDocument();
-    expect(cert).toHaveTextContent('Sertifikat Penjaga RimbaKecil');
+    expect(cert).toHaveTextContent('Sertifikat Penjaga TamanPico');
     expect(cert).toHaveTextContent('Sinta');
     expect(document.getElementById('certificate-download-btn')).toBeInTheDocument();
     expect(document.getElementById('certificate-print-btn')).toBeInTheDocument();

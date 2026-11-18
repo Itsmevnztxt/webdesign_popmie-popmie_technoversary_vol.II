@@ -12,107 +12,159 @@ const SANCTUARY_QUOTES: Record<BadgeId, string> = {
 
 function drawAndDownloadCertificate(explorerName: string) {
   try {
+    const W = 1400;
+    const H = 990;
     const canvas = document.createElement('canvas');
-    canvas.width = 1200;
-    canvas.height = 840;
+    canvas.width = W;
+    canvas.height = H;
     const ctx = canvas.getContext('2d');
     if (!ctx) return false;
 
-    // Paper cream background
-    ctx.fillStyle = '#FAF8F0';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const ink = '#293A30';
+    const leaf = '#477A59';
+    const deep = '#2F5C40';
+    const gold = '#D9A73C';
+    const cream = '#FAF8F0';
 
-    // Soft mint frame tint
+    ctx.fillStyle = cream;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 10;
+    ctx.strokeRect(34, 34, W - 68, H - 68);
+    ctx.strokeStyle = leaf;
+    ctx.lineWidth = 3;
+    ctx.strokeRect(58, 58, W - 116, H - 116);
+
     ctx.fillStyle = '#DCEEDB';
-    ctx.fillRect(36, 36, canvas.width - 72, canvas.height - 72);
+    ctx.fillRect(58, 58, W - 116, 150);
 
-    // Cream inner certificate card
-    ctx.fillStyle = '#FAF8F0';
-    ctx.fillRect(58, 58, canvas.width - 116, canvas.height - 116);
-
-    ctx.strokeStyle = '#293A30';
-    ctx.lineWidth = 6;
-    ctx.strokeRect(58, 58, canvas.width - 116, canvas.height - 116);
-
-    ctx.strokeStyle = '#477A59';
-    ctx.lineWidth = 3;
-    ctx.strokeRect(76, 76, canvas.width - 152, canvas.height - 152);
-
-    // Header badge
-    ctx.fillStyle = '#F5D77D';
-    ctx.beginPath();
-    ctx.roundRect(410, 120, 380, 46, 23);
-    ctx.fill();
-    ctx.strokeStyle = '#293A30';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-
-    ctx.fillStyle = '#293A30';
-    ctx.font = 'bold 20px "Plus Jakarta Sans", sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('PENGHARGAAN RIMBAKECIL', 600, 150);
-
-    // Title
-    ctx.font = 'bold 54px Georgia, serif';
-    ctx.fillStyle = '#293A30';
-    ctx.fillText('Sertifikat Penjaga RimbaKecil', 600, 240);
-
-    ctx.font = '24px "Plus Jakarta Sans", sans-serif';
-    ctx.fillStyle = '#477A59';
-    ctx.fillText('Dengan bangga diberikan kepada:', 600, 305);
-
-    // Explorer Name
-    ctx.font = 'bold 62px Georgia, serif';
-    ctx.fillStyle = '#293A30';
-    ctx.fillText(explorerName, 600, 392);
-
-    ctx.strokeStyle = '#F5D77D';
-    ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(310, 418);
-    ctx.lineTo(890, 418);
-    ctx.stroke();
-
-    // Citation text
-    ctx.font = '24px "Plus Jakarta Sans", sans-serif';
-    ctx.fillStyle = '#293A30';
-    ctx.fillText('Telah menuntaskan seluruh 4 misi menjaga keseimbangan alam:', 600, 485);
-    ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
-    ctx.fillStyle = '#2F5C40';
-    ctx.fillText('Kanopi Bunga • Sungai Jernih • Dunia Bawah Tanah • Pesisir Mangrove', 600, 526);
-
-    // 4 Seals along bottom
-    const seals = [
-      { label: 'Lulu Lebah', bg: '#FDF6DC', x: 255 },
-      { label: 'Kiko Katak', bg: '#D9EDE9', x: 485 },
-      { label: 'Cici Cacing', bg: '#DCEEDB', x: 715 },
-      { label: 'Bako Kepiting', bg: '#D9EDE9', x: 945 }
-    ];
-    seals.forEach((seal) => {
-      ctx.fillStyle = seal.bg;
+    [[34, 34], [W - 34, 34], [34, H - 34], [W - 34, H - 34]].forEach(([x, y]) => {
       ctx.beginPath();
-      ctx.arc(seal.x, 648, 52, 0, Math.PI * 2);
+      ctx.arc(x, y, 9, 0, Math.PI * 2);
+      ctx.fillStyle = gold;
       ctx.fill();
-      ctx.strokeStyle = '#293A30';
+      ctx.strokeStyle = ink;
       ctx.lineWidth = 3;
       ctx.stroke();
-
-      ctx.fillStyle = '#293A30';
-      ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
-      ctx.fillText('LULUS ✓', seal.x, 646);
-      ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
-      ctx.fillStyle = '#477A59';
-      ctx.fillText(seal.label, seal.x, 670);
     });
 
-    ctx.fillStyle = '#293A30';
-    ctx.font = '18px "Plus Jakarta Sans", sans-serif';
-    ctx.fillText('RimbaKecil • Ruang Jelajah Alam Anak Indonesia', 600, 756);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'alphabetic';
+
+    ctx.fillStyle = '#F5D77D';
+    ctx.beginPath();
+    ctx.roundRect(W / 2 - 250, 92, 500, 46, 23);
+    ctx.fill();
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 19px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('PENGHARGAAN RESMI  •  4/4 MISI TUNTAS', W / 2, 122);
+
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 56px Georgia, "Times New Roman", serif';
+    ctx.fillText('Sertifikat Penjaga TamanPico', W / 2, 258);
+
+    ctx.font = '22px "Plus Jakarta Sans", sans-serif';
+    ctx.fillStyle = leaf;
+    ctx.fillText('Dengan bangga diberikan kepada:', W / 2, 316);
+
+    let nameSize = 62;
+    ctx.font = `bold ${nameSize}px Georgia, "Times New Roman", serif`;
+    while (nameSize > 34 && ctx.measureText(explorerName).width > 820) {
+      nameSize -= 2;
+      ctx.font = `bold ${nameSize}px Georgia, "Times New Roman", serif`;
+    }
+    ctx.fillStyle = ink;
+    ctx.fillText(explorerName, W / 2, 404);
+
+    const nameWidth = Math.min(ctx.measureText(explorerName).width, 820);
+    ctx.strokeStyle = gold;
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(W / 2 - nameWidth / 2 - 40, 434);
+    ctx.lineTo(W / 2 + nameWidth / 2 + 40, 434);
+    ctx.stroke();
+
+    ctx.fillStyle = ink;
+    ctx.font = '23px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('Telah menuntaskan seluruh 4 misi menjaga keseimbangan alam:', W / 2, 502);
+    ctx.fillStyle = deep;
+    ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('Kanopi Bunga • Sungai Jernih • Dunia Bawah Tanah • Pesisir Mangrove', W / 2, 542);
+
+    const seals = [
+      { label: 'Lulu Lebah', bg: '#FDF6DC' },
+      { label: 'Kiko Katak', bg: '#D9EDE9' },
+      { label: 'Cici Cacing', bg: '#DCEEDB' },
+      { label: 'Bako Kepiting', bg: '#D9EDE9' }
+    ];
+    const startX = W / 2 - 1.5 * 250;
+    seals.forEach((seal, index) => {
+      const x = startX + index * 250;
+      const y = 672;
+      ctx.beginPath();
+      ctx.arc(x, y, 56, 0, Math.PI * 2);
+      ctx.fillStyle = seal.bg;
+      ctx.fill();
+      ctx.strokeStyle = ink;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(x, y, 44, 0, Math.PI * 2);
+      ctx.strokeStyle = leaf;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.fillStyle = ink;
+      ctx.font = 'bold 20px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('✓', x, y + 2);
+      ctx.font = 'bold 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('LULUS', x, y + 24);
+      ctx.fillStyle = leaf;
+      ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(seal.label, x, y + 96);
+    });
+
+    ctx.strokeStyle = 'rgba(71,122,89,0.45)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(140, 820);
+    ctx.lineTo(W - 140, 820);
+    ctx.stroke();
+
+    const issued = new Date().toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    ctx.textAlign = 'left';
+    ctx.fillStyle = leaf;
+    ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('DITERBITKAN', 140, 858);
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText(issued, 140, 884);
+
+    ctx.textAlign = 'right';
+    ctx.fillStyle = leaf;
+    ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('STATUS', W - 140, 858);
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('Penjaga Utama • 4/4 Zona', W - 140, 884);
+
+    ctx.textAlign = 'center';
+    ctx.fillStyle = leaf;
+    ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('TamanPico • Ruang Jelajah Alam Anak Indonesia', W / 2, 918);
 
     const dataUrl = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = dataUrl;
-    link.download = `sertifikat-rimbakecil-${explorerName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+    link.download = `sertifikat-tamanpico-${explorerName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -134,6 +186,11 @@ export function RewardSanctuary() {
   const hasMangrove = Boolean(state.badges.mangrove);
   const allCompleted = unlockedCount === BADGE_CATALOG.length;
   const explorerName = state.passport?.name || 'Penjelajah Cilik';
+  const issuedDate = new Date().toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
 
   const handleInspectReward = (id: BadgeId) => {
     audioManager.playSfx('pollinate');
@@ -176,10 +233,10 @@ export function RewardSanctuary() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-wider text-[#2F5C40] m-0">
-              Taman Hadiah RimbaKecil
+              Taman Hadiah TamanPico
             </p>
             <h2 id="sanctuary-title" className="font-story text-3xl sm:text-4xl font-bold mt-1 mb-0">
-              {state.passport ? `Taman Rimba Milik ${state.passport.name}` : 'Taman Rimba Bersama'}
+              {state.passport ? `Taman Pico Milik ${state.passport.name}` : 'Taman Pico Bersama'}
             </h2>
           </div>
 
@@ -204,7 +261,7 @@ export function RewardSanctuary() {
             viewBox="0 0 900 380"
             className="w-full h-auto block select-none"
             role="img"
-            aria-label="Ilustrasi Taman Hadiah RimbaKecil yang menampilkan bunga matahari, teratai biru, pohon oak, dan hutan bakau pesisir"
+            aria-label="Ilustrasi Taman Hadiah TamanPico yang menampilkan bunga matahari, teratai biru, pohon oak, dan hutan bakau pesisir"
           >
             {/* Sky & Panorama Hills */}
             <rect width="900" height="380" fill="#FAF8F0" />
@@ -400,50 +457,80 @@ export function RewardSanctuary() {
         {allCompleted ? (
           <section
             id="rimba-certificate-card"
-            className="field-note p-6 sm:p-8 bg-[#FAF8F0] mb-8 border-4 border-[#293A30] shadow-[0_8px_0_#477A59] route-stage-enter"
+            className="certificate-shell mb-8 route-stage-enter"
             aria-labelledby="certificate-title"
           >
-            <div className="border-2 border-dashed border-[#477A59]/60 rounded-2xl p-5 sm:p-7 text-center space-y-4">
-              <span className="inline-block text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full bg-[#F5D77D] border-2 border-[#293A30]">
-                Penghargaan Resmi &bull; 4/4 Misi Tuntas
-              </span>
-              <h3 id="certificate-title" className="font-story text-2xl sm:text-4xl font-bold m-0 text-[#293A30]">
-                Sertifikat Penjaga RimbaKecil
+            <div className="certificate-frame">
+              <span className="certificate-corner is-tl" aria-hidden="true" />
+              <span className="certificate-corner is-tr" aria-hidden="true" />
+              <span className="certificate-corner is-bl" aria-hidden="true" />
+              <span className="certificate-corner is-br" aria-hidden="true" />
+
+              <p className="certificate-kicker">Penghargaan Resmi &bull; 4/4 Misi Tuntas</p>
+              <h3 id="certificate-title" className="certificate-title">
+                Sertifikat Penjaga TamanPico
               </h3>
-              <p className="text-base text-[#2F5C40] font-semibold m-0">
-                Dengan bangga diberikan kepada:
-              </p>
-              <p className="font-story text-3xl sm:text-4xl font-bold text-[#293A30] underline decoration-[#F5D77D] decoration-4 underline-offset-8 m-0">
-                {explorerName}
-              </p>
-              <p className="text-base leading-relaxed text-[#293A30]/90 max-w-2xl mx-auto m-0 pt-2">
-                Telah membantu Lulu si Lebah, Kiko si Katak, Cici si Cacing, dan Bako si Kepiting memulihkan seluruh empat sudut lembah RimbaKecil hingga kembali seimbang dan lestari!
+              <p className="certificate-lead">Dengan bangga diberikan kepada:</p>
+              <p className="certificate-name">{explorerName}</p>
+              <p className="certificate-body">
+                Telah membantu Lulu si Lebah, Kiko si Katak, Cici si Cacing, dan Bako si Kepiting
+                memulihkan seluruh empat sudut lembah TamanPico hingga kembali seimbang dan lestari!
               </p>
 
-              <div className="pt-2 flex flex-wrap justify-center gap-3">
-                <button
-                  id="certificate-download-btn"
-                  type="button"
-                  className="touch-btn btn-primary px-5 py-3 text-sm sm:text-base"
-                  onClick={handleDownloadCertificate}
-                >
-                  Unduh Sertifikat (PNG) ↓
-                </button>
-                <button
-                  id="certificate-print-btn"
-                  type="button"
-                  className="touch-btn btn-paper px-5 py-3 text-sm sm:text-base"
-                  onClick={handlePrintCertificate}
-                >
-                  Cetak Sertifikat
-                </button>
+              <ul className="certificate-seals" aria-label="Empat zona yang telah diselesaikan">
+                {[
+                  { label: 'Lulu Lebah', zone: 'Kanopi Bunga', bg: '#FDF6DC' },
+                  { label: 'Kiko Katak', zone: 'Sungai Jernih', bg: '#D9EDE9' },
+                  { label: 'Cici Cacing', zone: 'Bawah Tanah', bg: '#DCEEDB' },
+                  { label: 'Bako Kepiting', zone: 'Pesisir Mangrove', bg: '#D9EDE9' }
+                ].map((seal) => (
+                  <li key={seal.label} className="certificate-seal" style={{ background: seal.bg }}>
+                    <span className="certificate-seal-mark" aria-hidden="true">
+                      ✓
+                    </span>
+                    <span className="certificate-seal-label">{seal.label}</span>
+                    <span className="certificate-seal-zone">{seal.zone}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="certificate-meta">
+                <div>
+                  <span>Diterbitkan</span>
+                  <strong>{issuedDate}</strong>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong>Penjaga Utama &bull; 4/4 Zona</strong>
+                </div>
               </div>
+
+              <p className="certificate-brand">TamanPico &bull; Ruang Jelajah Alam Anak Indonesia</p>
+            </div>
+
+            <div className="certificate-actions no-print">
+              <button
+                id="certificate-download-btn"
+                type="button"
+                className="touch-btn btn-primary px-5 py-3 text-sm sm:text-base"
+                onClick={handleDownloadCertificate}
+              >
+                Unduh Sertifikat (PNG) ↓
+              </button>
+              <button
+                id="certificate-print-btn"
+                type="button"
+                className="touch-btn btn-paper px-5 py-3 text-sm sm:text-base"
+                onClick={handlePrintCertificate}
+              >
+                Cetak Sertifikat
+              </button>
             </div>
           </section>
         ) : (
           <div className="field-note p-4 sm:p-5 bg-[#FDF6DC] mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <p className="text-sm sm:text-base font-semibold text-[#293A30] m-0">
-              Selesaikan semua <strong>4 zona</strong> ({unlockedCount}/4 selesai) untuk membuka <strong>Sertifikat Penjaga RimbaKecil</strong> atas namamu!
+              Selesaikan semua <strong>4 zona</strong> ({unlockedCount}/4 selesai) untuk membuka <strong>Sertifikat Penjaga TamanPico</strong> atas namamu!
             </p>
             <button
               type="button"

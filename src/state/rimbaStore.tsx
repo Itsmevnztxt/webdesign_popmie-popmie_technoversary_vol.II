@@ -68,7 +68,7 @@ export interface RimbaContextValue {
   announce: (message: string) => void;
 }
 
-export const STORAGE_KEY = 'rimbakecil_progress_v1';
+export const STORAGE_KEY = 'tamanpico_progress_v1';
 
 export const VALID_ROUTES: readonly AppRoute[] = ['home', 'portal', 'jelajah', 'wawasan', 'tentang'];
 
@@ -152,7 +152,7 @@ function sanitizeProfile(raw: unknown): ExplorerProfile | null {
       : 'biji';
   return {
     name: candidate.name.trim().slice(0, 40),
-    email: typeof candidate.email === 'string' ? candidate.email.trim().slice(0, 80) : 'tamu@rimbakecil.id',
+    email: typeof candidate.email === 'string' ? candidate.email.trim().slice(0, 80) : 'tamu@tamanpico.id',
     avatar,
     isGuest: Boolean(candidate.isGuest),
     joinedAt: typeof candidate.joinedAt === 'string' ? candidate.joinedAt : new Date().toISOString()
@@ -414,7 +414,7 @@ export function RimbaProvider({ children }: { children: React.ReactNode }) {
         ? { ...existing, avatar: avatar ?? existing.avatar }
         : {
             name: (identifier.includes('@') ? identifier.split('@')[0] || 'Penjelajah' : identifier.trim()).slice(0, 40),
-            email: (identifier.includes('@') ? identifier.trim() : `${needle.replace(/\s+/g, '')}@rimbakecil.id`).slice(0, 80),
+            email: (identifier.includes('@') ? identifier.trim() : `${needle.replace(/\s+/g, '')}@tamanpico.id`).slice(0, 80),
             avatar: avatar ?? 'biji',
             isGuest: false,
             joinedAt: new Date().toISOString()
@@ -443,7 +443,7 @@ export function RimbaProvider({ children }: { children: React.ReactNode }) {
   const loginAsGuest = useCallback((): ExplorerProfile => {
     const guestProfile: ExplorerProfile = {
       name: 'Penjelajah Tamu',
-      email: 'tamu@rimbakecil.id',
+      email: 'tamu@tamanpico.id',
       avatar: 'biji',
       isGuest: true,
       joinedAt: new Date().toISOString()

@@ -94,7 +94,7 @@ export function FooterSection({ onOpenJournal }: FooterSectionProps) {
       </div>
       <div className="max-w-5xl mx-auto mt-8 pt-6 border-t border-[#FAF8F0]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <p className="text-sm sm:text-base text-[#DCEEDB]/90 m-0">
-          RimbaKecil • Ruang Jelajah Alam Anak Indonesia
+          TamanPico • Ruang Jelajah Alam Anak Indonesia
         </p>
         <p className="text-xs sm:text-sm text-[#DCEEDB]/75 m-0">
           Karya Kompetisi Web Design EcoDigital For Environment

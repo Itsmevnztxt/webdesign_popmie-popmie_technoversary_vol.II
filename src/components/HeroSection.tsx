@@ -404,7 +404,7 @@ export function HeroSection() {
               className="font-story text-4xl sm:text-5xl lg:text-6xl font-bold leading-none tracking-tight mt-1 sm:mt-1.5 mb-0 transition-colors duration-500"
               style={{ color: isDarkSky ? '#FAF8F0' : '#293A30' }}
             >
-              RimbaKecil
+              TamanPico
             </h1>
             <p
               className={`mt-2 sm:mt-2.5 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mb-0 transition-colors duration-500 ${

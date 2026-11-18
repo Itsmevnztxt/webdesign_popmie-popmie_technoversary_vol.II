@@ -1,4 +1,4 @@
-# Daftar Kebutuhan Aset Ilustrasi (Asset Manifest) - RimbaKecil
+# Daftar Kebutuhan Aset Ilustrasi (Asset Manifest) - TamanPico
 
 Gunakan daftar ini untuk mengganti ilustrasi SVG sementara dengan aset gambar final bergaya *gouache* & *paper-cutout* buku cerita anak (palet `#FAF8F0`, `#477A59`, `#A8C99A`, `#C8DEA4`, `#DCEEDB`, `#D9EDE9`, `#F5D77D`, `#E9A58E`, garis tepi `#293A30`).
 

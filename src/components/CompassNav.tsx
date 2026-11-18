@@ -31,7 +31,7 @@ const COMPASS_ITEMS: CompassItemConfig[] = [
   {
     stage: 'sanctuary',
     label: 'Taman Hadiah',
-    ariaLabel: 'Buka Taman Hadiah RimbaKecil'
+    ariaLabel: 'Buka Taman Hadiah TamanPico'
   }
 ];
 
