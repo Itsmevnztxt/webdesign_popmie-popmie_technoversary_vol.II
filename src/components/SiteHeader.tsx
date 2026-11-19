@@ -146,7 +146,7 @@ export function SiteHeader({ journalOpen, onOpenJournal }: SiteHeaderProps) {
               <rect x="4" y="3" width="16" height="18" rx="3" fill="#DCEEDB" stroke="#293A30" strokeWidth="2" />
               <path d="M8 3v18M11.5 9h5M11.5 13h4" stroke="#293A30" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
-            <span className="hidden md:inline">Buku Catatan</span>
+            <span className="hidden xl:inline">Buku Catatan</span>
             <span id="journal-count" className="hud-journal-count">
               {unlockedCount}/4 Penemuan
             </span>

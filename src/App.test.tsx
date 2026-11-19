@@ -18,7 +18,7 @@ describe('TamanPico Multi-View Refactored Application', () => {
 
     expect(screen.getByRole('heading', { name: 'TamanPico' })).toBeInTheDocument();
     expect(screen.getByText('0/4 Penemuan')).toBeInTheDocument();
-    expect(screen.getByText(/Tiga Sudut Alam yang Menunggu Tanganmu/i)).toBeInTheDocument();
+    expect(screen.getByText(/Empat Sudut Alam yang Menunggu Tanganmu/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Lulu si Lebah Penyerbuk/i })).toBeInTheDocument();
 
     const heroBijiSvg = document.getElementById('hero-biji-svg');
@@ -909,5 +909,45 @@ describe('TamanPico Multi-View Refactored Application', () => {
     const companion = document.getElementById('biji-companion')!;
     expect(companion).toHaveClass('is-hidden');
     expect(companion).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('supports certificate PNG download, print trigger, and Mangrove wave SFX without errors', async () => {
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        bijiAwake: true,
+        passport: { name: 'Nadia Putri', email: 'nadia@tamanpico.id', avatar: 'crab', isGuest: false },
+        badges: { canopy: true, river: true, underground: true, mangrove: true },
+        sandbox: { sunTime: 'siang', rainActive: false, xrayActive: false, waveActive: false }
+      })
+    );
+    window.location.hash = '#jelajah';
+    const user = userEvent.setup();
+    const printSpy = vi.spyOn(window, 'print').mockImplementation(() => {});
+
+    render(<App />);
+
+    // Verify Mangrove wave sandbox plays wave SFX cleanly when audio enabled
+    await user.click(document.getElementById('audio-toggle-btn')!);
+    await user.click(document.getElementById('stage-btn-mangrove')!);
+    expect(() => audioManager.playSfx('soil')).not.toThrow();
+    expect(() => audioManager.playSfx('wave')).not.toThrow();
+    await user.click(document.getElementById('mangrove-wave-toggle')!);
+    expect(document.getElementById('mangrove-wave-layer')!.style.opacity).toBe('0.92');
+
+    // Visit Taman Hadiah & verify upgraded certificate structure + actions
+    await user.click(document.getElementById('stage-btn-sanctuary')!);
+    const cert = document.getElementById('rimba-certificate-card')!;
+    expect(cert).toHaveTextContent('Sertifikat Penjaga TamanPico');
+    expect(cert).toHaveTextContent('Nadia Putri');
+    expect(cert).toHaveTextContent('Pico si Tunas Ek');
+    expect(cert.querySelectorAll('.certificate-seal-img')).toHaveLength(4);
+
+    // Trigger PNG download (falls back cleanly in jsdom without crashing) & Print
+    await user.click(document.getElementById('certificate-download-btn')!);
+    expect(document.getElementById('discovery-toast')).toHaveClass('is-visible');
+
+    await user.click(document.getElementById('certificate-print-btn')!);
+    expect(printSpy).toHaveBeenCalledTimes(1);
   });
 });

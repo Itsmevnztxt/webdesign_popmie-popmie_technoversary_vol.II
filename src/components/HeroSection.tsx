@@ -127,7 +127,7 @@ export function HeroSection() {
 
   // Sun travels calmly across upper arc during 0.00..0.74, dips below horizon during night
   const dayProgress = Math.min(1, Math.max(0, cyclePhase / 0.74));
-  const sunX = 5 + dayProgress * 82; // percentage across sky
+  const sunX = 5 + dayProgress * 76; // percentage across sky, safely inset on narrow screens
   const sunArcY = 14 - Math.sin(dayProgress * Math.PI) * 11 + Math.max(0, (cyclePhase - 0.68) * 110);
   const sunOpacity = cyclePhase < 0.72 ? Math.min(1, Math.max(0, (0.72 - cyclePhase) * 6)) : 0;
 

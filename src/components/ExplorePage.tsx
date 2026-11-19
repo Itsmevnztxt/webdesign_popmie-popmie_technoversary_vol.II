@@ -35,7 +35,7 @@ export function ExplorePage() {
   return (
     <div id="jelajah-page" className="explore-shell">
       {/* Stage Switcher Bar */}
-      <div className="bg-[#FAF8F0] border-b-2 border-[#293A30]/15 py-3 px-4 sm:px-8">
+      <div id="explore-stage-header" className="no-print bg-[#FAF8F0] border-b-2 border-[#293A30]/15 py-3 px-4 sm:px-8">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-3 explore-compass-pad">
           <div>
             <h1 className="font-story text-xl sm:text-2xl font-bold m-0">

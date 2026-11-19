@@ -7,6 +7,7 @@ export type SfxName =
   | 'rain'
   | 'soil'
   | 'water'
+  | 'wave'
   | 'badge'
   | 'click';
 
@@ -19,8 +20,9 @@ export const AUDIO_PATHS = {
     'sort-ok': '/assets/audio/sfx-wood-tap.mp3',
     'sort-err': '/assets/audio/sfx-whoosh.mp3',
     rain: '/assets/audio/sfx-rain.mp3',
-    soil: encodeURI('/assets/audio/Suara Remahan Tanah.mp3'),
+    soil: '/assets/audio/sfx-soil-crumble.mp3',
     water: '/assets/audio/sfx-water-drop.mp3',
+    wave: '/assets/audio/sfx-rain.mp3',
     badge: '/assets/audio/sfx-biji-wake.mp3',
     click: '/assets/audio/sfx-wood-tap.mp3'
   } satisfies Record<SfxName, string>
@@ -256,6 +258,9 @@ class RimbaAudioManager {
         break;
       case 'water':
         this.playToneSequence([493.88, 659.25], 0.07, 'sine', 0.05);
+        break;
+      case 'wave':
+        this.playToneSequence([293.66, 392, 329.63], 0.11, 'sine', 0.05);
         break;
       case 'badge':
         this.playToneSequence([523.25, 659.25, 783.99, 1046.5], 0.09, 'triangle', 0.07);

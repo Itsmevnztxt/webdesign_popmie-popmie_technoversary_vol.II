@@ -1,28 +1,38 @@
-# Daftar Kebutuhan Aset Ilustrasi (Asset Manifest) - TamanPico
+# Daftar Aset Ilustrasi & Audio — TamanPico
 
-Gunakan daftar ini untuk mengganti ilustrasi SVG sementara dengan aset gambar final bergaya *gouache* & *paper-cutout* buku cerita anak (palet `#FAF8F0`, `#477A59`, `#A8C99A`, `#C8DEA4`, `#DCEEDB`, `#D9EDE9`, `#F5D77D`, `#E9A58E`, garis tepi `#293A30`).
+Seluruh aset visual menggunakan gaya *gouache* & *paper-cutout* buku cerita anak (palet `#FAF8F0`, `#477A59`, `#A8C99A`, `#C8DEA4`, `#DCEEDB`, `#D9EDE9`, `#F5D77D`, `#E9A58E`, garis tepi `#293A30`).
 
-| Asset ID & Filename | Kategori | Dimensi / Rasio & Format | Deskripsi Visual & Pose / State |
-| :--- | :--- | :--- | :--- |
-| `mascot-biji-sleeping.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Karakter biji ek (*acorn*) kecil dengan topi cokelat hangat `#5C4636`, tubuh coral lembut `#E9A58E`, tas selempang kelopak hijau `#C8DEA4`. Mata terpejam damai, kedua daun di puncak kepala terkulai santai ke samping, simbol `Zzz` tipis di kanan atas. |
-| `mascot-biji-happy.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose menyapa ceria: mata bulat berbinar, senyum ramah, kedua daun kepala tegak miring ke atas dengan sudut bersemangat. |
-| `mascot-biji-worried.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose saat misi zona belum selesai: alis sedikit berkerut, mulut melengkung sedih kecil, kedua daun kepala terkulai ke bawah menandakan ada masalah alam. |
-| `mascot-biji-hint.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose berpikir/memberi petunjuk: kepala miring ringan, salah satu daun kepala melengkung menyerupai tanda tanya `?`. |
-| `mascot-biji-celebrate.svg` | Mascot Expression | `240x240px` (1:1), SVG transparan | Pose setelah sandbox terbuka: kedua daun kepala mekar tegak dan menumbuhkan dua kuncup bunga kecil `#F5D77D` dan `#E9A58E` di pangkal daun. |
-| `hero-valley-hills.png` | Environment Layer | `2400x960px` (5:2), PNG transparan / SVG | Lanskap bukit berlapis tanpa kotak: bukit belakang `#A8C99A`, bukit tengah `#C8DEA4`, bukit depan `#477A59` bertekstur sapuan kuas *gouache* lembut, dilengkapi satu pohon besar rindang di sisi kanan-tengah sebagai tempat Biji berteduh. |
-| `zone1-meadow-bg.png` | Environment Layer | `1600x820px` (~2:1), PNG transparan / SVG | Latar padang rumput berlapis untuk Zona 1 dengan kontur bukit pastel `#A8C99A` -> `#C8DEA4` -> `#477A59` dan siluet rumput tipis di tepi bawah. |
-| `prop-storm-cloud.svg` | Interactive Prop | `320x200px` (16:10), SVG transparan | Awan kelabu tebal bergaya potongan kertas (*paper-cutout*) dengan dua garis gerimis tipis, garis tepi `#293A30` halus. (Dibuat 2 variasi ringan agar tidak identik). |
-| `prop-sunflower-states.svg` | Interactive Prop | `320x440px`, SVG transparan (multi-layer) | Batang dan kepala bunga matahari besar `#F5D77D` dengan bagian tengah `#5C4636`. Memerlukan state layu/menunduk, setengah mekar, dan mekar cerah penuh untuk animasi rotasi heliotropisme. |
-| `prop-pollinator-bee.svg` | Interactive Prop | `140x120px`, SVG transparan | Lebah kecil gemuk berwarna `#F5D77D` dan garis `#293A30`, sayap pastel transparan `#D9EDE9`, ekspresi ramah. |
-| `prop-butterfly-set.svg` | Interactive Prop | `120x100px` per kupu-kupu (3 varian), SVG transparan | Tiga kupu-kupu kecil dengan sayap kombinasi `#F5D77D`, `#E9A58E`, `#D9EDE9`, dan `#C8DEA4`. |
-| `zone2-river-basin.png` | Environment Layer | `1600x640px` (5:2), PNG transparan / SVG | Bantaran sungai berumput `#C8DEA4` dengan alur sungai berkelok menuju kolam teratai di sisi kanan, batu pijakan abu-sage, dan rumpun alang-alang di tepi kiri. Warna badan air dipisah agar bisa bertransisi dari keruh ke `#D9EDE9`. |
-| `prop-waste-items.svg` | Interactive Prop | `128x128px` per item (4 item), SVG transparan | Empat ikon benda bergaya ilustrasi buku cerita: (1) Botol plastik bening `#D9EDE9`, (2) Kaleng minuman `#E9A58E`, (3) Ranting patah `#5C4636`, (4) Daun gugur kering `#E9A58E`. |
-| `prop-sorting-stations.svg` | Interactive Prop | `240x200px` per wadah (2 item), SVG transparan | (1) Keranjang anyam daur ulang berwarna krem/biru langit, (2) Tumpukan kompos tanah subur dengan tunas daun kecil di puncaknya. |
-| `prop-frog-pond.svg` | Interactive Prop | `180x160px`, SVG transparan | Katak hijau ceria `#477A59` dengan mata besar ramah, siap ditempatkan di atas daun teratai `#A8C99A`. |
-| `zone3-underground-cross-section.png` | Environment Layer | `1600x820px` (~2:1), PNG / SVG | Penampang melintang tanah: lapisan rumput permukaan `#477A59`, lapisan humus `#5C4636`, tanah liat `#463529`, dan lapisan tanah dalam `#32261E` beserta kerikil kecil alami. |
-| `prop-soil-clumps.svg` | Interactive Prop | `160x120px` (3 variasi), SVG transparan | Gumpalan tanah keras kering berwarna cokelat muda retak yang menyelimuti biji oak sebelum diketuk anak. |
-| `prop-earthworm.svg` | Interactive Prop | `180x90px`, SVG transparan | Cacing tanah kecil ramah berwarna coral `#E9A58E` dengan ruas tubuh lembut dan mata titik kecil `#293A30`. |
-| `prop-oak-tree-xray.svg` | Interactive Prop | `600x700px`, SVG transparan (2 layer: normal & x-ray) | Pohon oak muda di permukaan plus jaringan akar bercabang ke bawah tanah. Layer X-ray menampilkan pembuluh bercahaya `#D9EDE9` dan gelembung nutrisi `#F5D77D` untuk ditampilkan di dalam lingkaran kaca pembesar. |
-| `sticker-badge-canopy.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker bunga matahari mekar dan lebah penyerbuk di sudut kanan atas. |
-| `sticker-badge-river.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker katak hijau tersenyum di atas daun teratai berair jernih `#D9EDE9`. |
-| `sticker-badge-underground.svg` | Journal Sticker | `200x200px` (1:1), SVG transparan | Lencana bundar berstiker pohon oak rimbun lengkap dengan siluet akar bercabang di bawah garis tanah. |
+## 1. Status Aset Terbaru (Hasil Pemetaan `69.png`–`78.png` & Audio)
+
+| File Input Baru | Dipetakan Menjadi | Kegunaan di Aplikasi |
+| :--- | :--- | :--- |
+| `69.png` | `public/assets/images/zone4-mangrove-bg.png` | Latar teluk pesisir Zona 4 (Mangrove) |
+| `70.png` | `public/assets/images/art-cacing.png` | Ilustrasi kisah beranda & artikel Cici si Cacing (`Wawasan`) |
+| `71.png` | `public/assets/images/prop-crab-bako.png` | Karakter Bako si Kepiting di Zona 4 & Taman Hadiah |
+| `72.png` | `public/assets/images/prop-sea-net.png` | Sampah jaring nelayan di Zona 4 (Mangrove) |
+| `73.png` | `public/assets/images/prop-mangrove-seedling.png` | Bibit bakau tertanam di Zona 4 (Mangrove) |
+| `74.png` | `public/assets/images/prop-mangrove-tree.png` | Pohon mangrove berakar tunjang di Zona 4 & Taman Hadiah |
+| `75.png` | `public/assets/images/sticker-badge-mangrove.png` | Stiker lencana Zona 4 di Buku Catatan & Sertifikat |
+| `76.png` | `public/assets/images/avatar-crab.png` | Avatar Bako Kepiting di Portal, Header, dan Roleplay |
+| `77.png` | `public/assets/images/art-penyerbukan.png` | Ilustrasi kisah beranda & artikel Penyerbukan (`Wawasan`) |
+| `78.png` | `public/assets/images/eco-mangrove.png` | Ilustrasi ekosistem mangrove di Beranda & Galeri `Wawasan` |
+| `Suara Remahan Tanah.mp3` | `public/assets/audio/sfx-soil-crumble.mp3` | Efek suara remahan tanah di Zona 3 & penanaman bakau |
+
+## 2. Aset yang Masih Bersifat Opsional / Memakai Fallback Bersama
+
+Aplikasi sudah berjalan penuh tanpa error 404 (semua path yang dipakai di kode ada di disk). Namun jika ingin membuat setiap properti & efek suara memiliki file unik tersendiri, berikut daftar aset yang saat ini masih memakai fallback SVG atau berbagi file audio:
+
+### Aset Gambar Opsional (Saat Ini Memakai Inline SVG)
+| Nama File Disarankan | Lokasi Pakai | Status Saat Ini |
+| :--- | :--- | :--- |
+| `prop-waste-branch.png` (`240x240px`, RGBA) | `src/components/RiverZone.tsx` (Ranting Patah) | Memakai ikon SVG vektor inline |
+| `prop-bin-recycle.png` (`240x240px`, RGBA) | `src/components/RiverZone.tsx` (Keranjang Daur Ulang) | Memakai ikon SVG vektor inline |
+
+### Aset Audio Opsional (Saat Ini Berbagi MP3 + Web Audio Fallback)
+| Nama File Disarankan | Slot `SfxName` (`src/audio/audioManager.ts`) | Status Saat Ini |
+| :--- | :--- | :--- |
+| `sfx-pollinate.mp3` | `'pollinate'` (Zona 1 penyerbukan & klik Taman Hadiah) | Memakai `sfx-water-drop.mp3` |
+| `sfx-sort-err.mp3` | `'sort-err'` (Salah wadah di Zona 2 / peringatan Zona 1) | Memakai `sfx-whoosh.mp3` |
+| `sfx-badge.mp3` | `'badge'` (Lencana terbuka & unduh sertifikat) | Memakai `sfx-biji-wake.mp3` |
+| `sfx-wave.mp3` | `'wave'` (Uji gelombang ombak laut di Zona 4) | Memakai `sfx-rain.mp3` + fallback nada Web Audio |
+| `sfx-click.mp3` | `'click'` (Klik UI ringan) | Memakai `sfx-wood-tap.mp3` |

@@ -115,7 +115,7 @@ export function AboutContactPage() {
               TamanPico dirancang untuk anak usia 7–10 tahun agar mereka belajar merawat lingkungan melalui eksperimen langsung dan cerita bergambar.
             </p>
             <p className="text-base leading-relaxed text-[#293A30]/90 m-0">
-              Anak-anak berperan sebagai Lulu si Lebah, Kiko si Katak, dan Cici si Cacing untuk melihat hubungan nyata antara sinar matahari, air sungai yang bersih, serta tanah yang gembur. Semua kemajuan belajar disimpan langsung di perangkatmu supaya bisa dilanjutkan kapan saja.
+              Anak-anak berperan sebagai Lulu si Lebah, Kiko si Katak, Cici si Cacing, dan Bako si Kepiting untuk melihat hubungan nyata antara sinar matahari, air sungai yang bersih, tanah yang gembur, dan pesisir bakau. Semua kemajuan belajar disimpan langsung di perangkatmu supaya bisa dilanjutkan kapan saja.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

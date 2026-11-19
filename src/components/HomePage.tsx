@@ -153,7 +153,7 @@ export function HomePage() {
               Kisah Lembah Hari Ini
             </p>
             <h2 id="story-problems-title" className="font-story text-3xl sm:text-4xl font-bold mt-2 mb-3">
-              Tiga Sudut Alam yang Menunggu Tanganmu
+              Empat Sudut Alam yang Menunggu Tanganmu
             </h2>
             <p className="text-base sm:text-lg text-[#293A30]/90 m-0">
               Setiap bagian alam dari kanopi hutan, sungai, akar bawah tanah, hingga pesisir bakau saling terhubung seperti halaman buku cerita.
@@ -235,7 +235,7 @@ export function HomePage() {
                 Bermain Peran Satwa
               </p>
               <h2 id="animals-preview-title" className="font-story text-3xl sm:text-4xl font-bold mt-2 mb-2">
-                Pilih Tiga Sahabat Penjaga Rimba
+                Pilih Empat Sahabat Penjaga TamanPico
               </h2>
               <p className="text-base sm:text-lg text-[#293A30]/90 m-0">
                 Ketuk salah satu sahabat satwa untuk berkenalan dan melihat misi seru di zonanya!

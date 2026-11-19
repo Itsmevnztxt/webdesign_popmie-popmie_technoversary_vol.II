@@ -511,7 +511,7 @@ export function PortalPage() {
               Langsung Main Sekarang!
             </h2>
             <p className="text-base leading-relaxed text-[#293A30]/90 mb-5">
-              Ingin langsung membantu Lulu si Lebah, Kiko si Katak, dan Cici si Cacing menumbuhkan Taman Hadiah? Klik tombol di bawah untuk langsung bertualang.
+              Ingin langsung membantu Lulu si Lebah, Kiko si Katak, Cici si Cacing, dan Bako si Kepiting menumbuhkan Taman Hadiah? Klik tombol di bawah untuk langsung bertualang.
             </p>
             <button
               id="guest-login-btn"

@@ -93,7 +93,7 @@ export function CompanionBiji() {
               type="button"
               tabIndex={hidden ? -1 : 0}
               aria-label="Sembunyikan pesan Pico"
-              className="shrink-0 w-7 h-7 rounded-full border border-[#293A30]/30 bg-[#DCEEDB]/60 text-[#293A30] text-xs font-extrabold flex items-center justify-center hover:bg-[#F5D77D]"
+              className="biji-close-btn shrink-0 w-7 h-7 rounded-full border border-[#293A30]/30 bg-[#DCEEDB]/60 text-[#293A30] text-xs font-extrabold flex items-center justify-center hover:bg-[#F5D77D]"
               onClick={() => {
                 setBubbleMinimized(true);
                 setShowingHint(false);

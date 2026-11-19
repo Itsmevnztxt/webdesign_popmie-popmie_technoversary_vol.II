@@ -18,7 +18,7 @@ const SEA_TRASH: readonly TrashItem[] = [
     domId: 'mangrove-trash-net',
     label: 'Bersihkan jaring nelayan yang tersangkut di lumpur pesisir',
     image: '/assets/images/prop-sea-net.png',
-    leftPct: 33,
+    leftPct: 30,
     topPct: 68
   },
   {
@@ -27,14 +27,14 @@ const SEA_TRASH: readonly TrashItem[] = [
     label: 'Angkat botol plastik hanyut dari tepi pesisir bakau',
     image: '/assets/images/prop-waste-bottle.png',
     leftPct: 58,
-    topPct: 72
+    topPct: 74
   }
 ];
 
 const PLANT_SPOTS = [
-  { id: 'mangrove-spot-0', leftPct: 26, topPct: 64, label: 'Tanam bibit bakau pertama di pesisir kiri' },
-  { id: 'mangrove-spot-1', leftPct: 45, topPct: 67, label: 'Tanam bibit bakau kedua di tengah pesisir' },
-  { id: 'mangrove-spot-2', leftPct: 64, topPct: 65, label: 'Tanam bibit bakau ketiga di tepi air surut' }
+  { id: 'mangrove-spot-0', leftPct: 24, topPct: 63, label: 'Tanam bibit bakau pertama di pesisir kiri' },
+  { id: 'mangrove-spot-1', leftPct: 45, topPct: 66, label: 'Tanam bibit bakau kedua di tengah pesisir' },
+  { id: 'mangrove-spot-2', leftPct: 66, topPct: 64, label: 'Tanam bibit bakau ketiga di tepi air surut' }
 ];
 
 export function MangroveZone() {
@@ -214,26 +214,26 @@ export function MangroveZone() {
                     src="/assets/images/prop-mangrove-tree.png"
                     alt="Pohon mangrove berakar tunjang kokoh"
                     draggable={false}
-                    className="w-[96px] sm:w-[148px] md:w-[172px] h-auto -translate-y-[34%] object-contain pointer-events-none select-none transition-all duration-700"
+                    className="w-[74px] sm:w-[132px] md:w-[164px] lg:w-[176px] h-auto -translate-y-[32%] object-contain pointer-events-none select-none transition-all duration-700 drop-shadow-sm"
                   />
                 ) : isPlanted ? (
                   <img
                     src="/assets/images/prop-mangrove-seedling.png"
                     alt="Bibit bakau muda tertanam di lumpur"
                     draggable={false}
-                    className="w-[46px] sm:w-[68px] h-auto -translate-y-[30%] object-contain pointer-events-none select-none"
+                    className="w-[38px] sm:w-[58px] md:w-[68px] h-auto -translate-y-[28%] object-contain pointer-events-none select-none drop-shadow-sm"
                   />
                 ) : trashCleaned ? (
                   <button
                     id={spot.id}
                     type="button"
                     aria-label={spot.label}
-                    className="min-w-[52px] min-h-[52px] sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-[#293A30] bg-[#FAF8F0]/85 hover:bg-[#F5D77D] flex items-center justify-center shadow-md transition-transform hover:scale-105"
+                    className="min-w-[46px] min-h-[46px] sm:w-16 sm:h-16 px-1.5 rounded-full border-2 border-dashed border-[#293A30] bg-[#FAF8F0]/90 hover:bg-[#F5D77D] flex items-center justify-center shadow-md transition-transform hover:scale-105"
                     onClick={() => handlePlantSpot(idx)}
                     onKeyDown={handleKeyDownAction(() => handlePlantSpot(idx))}
                     onKeyUp={handleKeyUpAction(() => handlePlantSpot(idx))}
                   >
-                    <span className="text-xs font-extrabold text-[#293A30]">+ Tanam</span>
+                    <span className="text-[10px] sm:text-xs font-extrabold text-[#293A30] leading-none">+ Tanam</span>
                   </button>
                 ) : null}
               </div>
@@ -263,9 +263,9 @@ export function MangroveZone() {
             src="/assets/images/prop-crab-bako.png"
             alt="Bako si kepiting bakau menjaga akar mangrove"
             draggable={false}
-            className="absolute left-[14%] bottom-[8%] w-[12%] min-w-[54px] max-w-[104px] h-auto object-contain pointer-events-none transition-transform duration-700"
+            className="absolute left-[9%] bottom-[7%] w-[13%] min-w-[48px] max-w-[104px] h-auto object-contain pointer-events-none transition-transform duration-700 drop-shadow-sm"
             style={{
-              transform: forestRestored ? 'translateX(36px) scale(1.06)' : 'translateX(0px)'
+              transform: forestRestored ? 'translateX(26%) scale(1.06)' : 'translateX(0px)'
             }}
           />
         </div>
@@ -288,8 +288,9 @@ export function MangroveZone() {
                 aria-pressed={waveActive}
                 className={`touch-btn ${waveActive ? 'btn-forest' : 'btn-primary'} px-5 py-3 shrink-0`}
                 onClick={() => {
-                  audioManager.playSfx('click');
-                  updateSandbox({ waveActive: !state.sandbox.waveActive });
+                  const nextWave = !state.sandbox.waveActive;
+                  audioManager.playSfx(nextWave ? 'wave' : 'click');
+                  updateSandbox({ waveActive: nextWave });
                 }}
               >
                 {waveActive ? 'Tenangkan Ombak Pasang' : 'Uji Gelombang Ombak Laut'}
